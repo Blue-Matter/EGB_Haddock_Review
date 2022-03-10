@@ -156,7 +156,7 @@ The EGB Assessment is a product of the Haddock working group and has benefited f
 
 Special thanks goes to the Canadian DFO team that have worked in close coordination in the production of the EGB TORs: Monica Finley, Yanjun Wang, Tara McIntyre, Tim Barrett, Kathryn Cooper-MacDonald and Michelle Greenlaw. 
 
-Special thanks also to Tim Miller and Brian Stock for their help getting to grips with their excellent WHAM package
+Special thanks also to Tim Miller and Brian Stock for their help getting to grips with their excellent WHAM package.
 
 
 &nbsp;
