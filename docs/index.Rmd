@@ -35,13 +35,38 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ```
+
 ***
+
+### Software
+
+&nbsp;
+
+#### Wood's Hole Assessment Model (WHAM)
+
+For more information about WHAM you can go to [the WHAM homepage](https://brianstock.github.io/wham/)
+
+or read the peer-reviewed paper by [Stock and Miller 2021](https://www.sciencedirect.com/science/article/pii/S0165783621000953)
+
+&nbsp;
+
+#### OpenMSE
+
+For more information about the OpenMSE software (Hordyk et al.) used in reference point calculation, projection and plan-B testing visit [the openMSE homepage](https://openMSE.com). 
+
+The operating model equations are identical to those detailed in the appendices of the peer-reviewed paper for DLMtool [Carruthers & Hordyk 2019](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13081)
+
+&nbsp;
+&nbsp;
+
+***
+
 
 ### R Code 
 
-R code for TOR 4 (Assessment), TOR 6 (Projection), TOR 8 (Plan - B assessment), TOR 11 (Reference points)is available from a [private GitHub repository](https://github.com/Blue-Matter/EGB_Haddock/)
+R code for TOR 4 (Assessment), TOR 6 (Projection), TOR 8 (Plan - B assessment), TOR 11 (Reference points) is available from a [private GitHub repository](https://github.com/Blue-Matter/EGB_Haddock/)
 
-Please email tom@bluematterscience or failing that, adrian@bluematterscience for access to the repository. 
+Please email tom@bluematterscience or failing that, quang@bluematterscience for access to the repository. 
 
 The repo has the following folder structure:
 
@@ -97,7 +122,7 @@ The correct order to run through the scripts from scratch is:
 
 ### Further details on the Base (Mest) model
 
-A full set of detailed diagnostics and model estimates are available in the form of the default wham report which is available [here](Base_Model/wham_output.html)
+A full set of detailed diagnostics and model estimates are available in the form of the default wham plotting figures which are available [here](https://drive.google.com/drive/folders/1AgzaUH1UK0_JPme2MCRSvpI1wTHroNKS?usp=sharing)
 
 &nbsp;
 &nbsp;
@@ -115,26 +140,6 @@ Proceedings of the 2019 Transboundary Resources Assessment Committee for Eastern
 
 ***
 
-### Software
-
-#### Wood's Hole Assessment Model (WHAM)
-
-For more information about WHAM you can go to [the WHAM homepage](https://brianstock.github.io/wham/)
-
-or read the peer-reviewed paper by [Stock and Miller 2021](https://www.sciencedirect.com/science/article/pii/S0165783621000953)
-
-&nbsp;
-
-#### OpenMSE
-
-For more information about the OpenMSE software (Hordyk et al.) used in reference point calculation, projection and plan-B testing visit [the openMSE homepage](www.openMSE.com). 
-
-The operating model equations are identical to those detailed in the appendices of the peer-reviewed paper for DLMtool [Carruthers & Hordyk 2019](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13081)
-
-&nbsp;
-&nbsp;
-
-***
 
 ### Tables and Figures presented in TORs 4, 6, 8 and 11
 
