@@ -1,16 +1,12 @@
 ---
-title: "Evaluating Bluefin Harvest Strategies That Use Genetic Mark-Recapture Data"
+title: "Supporting Materials for the Review of EGB Haddock "
 author: "Tom Carruthers <tom@bluematterscience.com>"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 &nbsp;
 
-<img src="img/Bluefin-big.jpg" width="500">
-&nbsp;
-
-<img src="img/TOF.jpg" width="200">
-<img src="img/BM.jpg" width="140">
+<img src="img/GBmap.JPG" width="500"> <img src="img/Haddock.jpg" width="200">
 
 &nbsp;
 
@@ -41,19 +37,38 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 ***
 
-### Project details
+### R Code 
+
+R code for TOR 4 (Assessment), TOR 6 (Projection), TOR 8 (Plan - B assessment), TOR 11 (Reference points)is available from a [private GitHub repository](https://github.com/Blue-Matter/EGB_Haddock/)
+
+Please email tom@bluematterscience or failing that, adrian@bluematterscience for access to the repository. 
+
+The repo has the following folder structure:
+
+<img src="img/repo.JPG" width="500">
+
 
 ```{r ProjDets, eval=T}
-dat<-data.frame(c("Funding body","Funding stream","NOAA Award Number",
-"Request for proposals","Project Partners","Collaborators"),
-                 c("U.S. National Oceanic and Atmospheric Administration",
-                   "FY21 Bluefin Tuna Research Program",
-                   "NA21NMF4720304",
-                   "NOAA-NMFS-SE-2021-2006574",
-                   "The Ocean Foundation, Blue Matter Science Ltd.",
-                   "Tom Carruthers, Shana Miller, Matt Lauretta, Doug Butterworth, Ann Preece, Richard Hillary"))
+dat<-data.frame(c("/Data","/Figures","/Tables","/TOR 4 i - Standard SCA","/TOR 4 ii - Time Varying Survival","/TOR 4 iii - Sim testing","/TOR 4 iv - Base EGB model","/TOR 4 v - Fit Retro Estimates","/TOR 4 vi - Sensitivity Base EGB","/TOR 6 Projections","/TOR 8 - Plan B EGB","/TOR 11 i - Make EGB OM","/TOR 11 ii - Reference points EGB", "/VPA","/WHAM","/Z - Old scripts"),
 
-kable(dat,col.names=rep("",2)) 
+                 c("Raw and processed data used in the fitting of assessments and production of operating models",
+                   "TOR 4, 6, 8 and 11 Figures",
+                   "TOR 4, 6, 8 and 11 Tables",
+                   "Specification & fitting of 'standard' statistical catch at age WHAM models without time varying M",
+                   "Specification & fitting of WHAM models including time varying M",
+                   "Simulation self-testing of time varying M models",
+                   "Specification, fitting and generic wham report building for the Base (Mest) assessment model including jitters",
+                   "Plotting of fitting diagnostics, M LHF profiling, retrospective diagnostics and model estimates",
+                   "Specification, fitting & results of sensitivity analyses for the Base (Mest) assessment model",
+                   "Projection of Base (Mest) assessment model including TAC alternatives and risk profiles",
+                   "Closed-loop simulation testing of existing and new management procedures for EGB haddock including plan-B-smooth",
+                   "Specification of openMSE operating models for the Base (Mest) assessment for the purposes of reference point calculation, projections and plan-B MP evaluation",
+                   "Code to investigate alternative reference points for EGB haddock including FXSPR ref points",
+                   "Code and documentation for the continuity VPA run",
+                   "Additional code and data to support EGB assessment",
+                   "Disused code for reference"))
+
+kable(dat,col.names=c("Folder","Contents")) 
  
 
 ```
@@ -62,90 +77,68 @@ kable(dat,col.names=rep("",2))
 &nbsp;
 
 
-***
+Within each folder there are calculation scripts starting a_, b_ etc and then source code, Tabulation and Figure scripts (x_, y_, z_).
 
-### Project description
+<img src="img/infolder.JPG" width="500">
 
-The objective of this project is to use existing operating models for Atlantic bluefin tuna to evaluate the potential performance of harvest strategies that use conventional gene tagging data. 
+To run through the various analyses, first run the Dependencies.R script in the base directory.
 
-(more detail and references to come)
+The correct order to run through the scripts from scratch is:
 
-&nbsp;
-&nbsp;
-
-***
-
-### Project status (~30%)
-
-Completed so far:
-
-* An individual tagging model has been integrated into the the MSE framework
-* Observed tag histories are now available to MPs for the setting of management advice
-* A preliminary TMB Brownie estimator has been developed and tested 
-
-Next steps: 
-
-1. testing of harvest rate / abundance estimators based on simulated tag histories
-2. generate a set of tag release designs and codify these into the package (class GT)
-3. Modify the MSE code to only do GT calcualtions if a GT management procedure is specified
-4. Develop alternative mark-recapture estimators of harvest rate and abundance
+* TOR 4 i-vi (assessment) 
+* TOR 11 i & ii (reference points), 
+* TOR 6 (projections - uses operating model and reference points from TOR 11)
+* TOR 8 (plan B - uses operating model and reference points from TOR 8)
 
 &nbsp;
 &nbsp;
 
 ***
 
-### Links 
+### Further details on the Base (Mest) model
 
-<div class="col2">
-
-[ABTGT GitHub Repository](https://github.com/Blue-Matter/ABTGT/)
-
-[Draft paper (private Google Doc for collaborators)](https://docs.google.com/document/d/1DduUQIQQrJFBXquaoPXIjKMvuVVZMYQf9H6phEI_uGQ/edit?usp=sharing)
-
-[Atlantic bluefin tuna MSE framework and operating models](https://iccat.github.io/abft-mse/)
-
-
-</div>
+A full set of detailed diagnostics and model estimates are available in the form of the default wham report which is available [here](Base_Model/wham_output.html)
 
 &nbsp;
 &nbsp;
 
 ***
 
-### Demonstration Code
+### Background information
 
-```{r demo, echo=TRUE, eval=FALSE}
+A summary of the [rejected 2019 VPA asssessment](Reports/TSR_2019_EGBHAD_FINAL_CDN Approved.pdf)
 
-library(ABTMSE) # The ABT MSE R package
-library(ABTGT)  # The ABT Gene Tagging package
-loadABT()       # Load all MSE objects (OMs, observation error models etc)
-
-
-OM<-OM_1d       # A small (four simulation) version of the stochastic reference case operating model
-GT <- make_GT(OM,nT=10000)                      # make a gene tagging object that defines the release design
-test<-new('MSE_GT',OM,list(c("U5","U5")),GT=GT) # makes a dataset that includes tag histories
-
-dset[[1]]$TH # tag histories
-dset[[1]]$CN # observed catch numbers
-dset[[1]]$N # true simulated numbers at age
-
-  
-```
-
+Proceedings of the 2019 Transboundary Resources Assessment Committee for Eastern Georges Bank Cod and Haddock, and Georges Bank Yellowtail Flounder [NOAA status report](Reports/2019_Proceedings_noaa_24762_DS1.pdf)
 
 &nbsp;
 &nbsp;
-
 
 ***
-### References
 
-[NOAA BTRP](https://www.fisheries.noaa.gov/grant/bluefin-tuna-research-program)
+### Software
 
-[The Ocean Foundation](https://oceanfdn.org/)
+#### Wood's Hole Assessment Model (WHAM)
 
-[Blue Matter](https://www.bluematterscience.com/)
+For more information about WHAM you can go to [the WHAM homepage](https://brianstock.github.io/wham/)
+
+or read the peer-reviewed paper by [Stock and Miller 2021](https://www.sciencedirect.com/science/article/pii/S0165783621000953)
+
+&nbsp;
+
+#### OpenMSE
+
+For more information about the OpenMSE software (Hordyk et al.) used in reference point calculation, projection and plan-B testing visit [the openMSE homepage](www.openMSE.com). 
+
+The operating model equations are identical to those detailed in the appendices of the peer-reviewed paper for DLMtool [Carruthers & Hordyk 2019](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13081)
+
+&nbsp;
+&nbsp;
+
+***
+
+### Tables and Figures presented in TORs 4, 6, 8 and 11
+
+The excel tables and jpg figures are available in a public [google drive folder](https://drive.google.com/drive/folders/12ApfuSqkCV5rwY0N7f9buK2xZNom1erB?usp=sharing)
 
 &nbsp;
 &nbsp;
@@ -154,7 +147,11 @@ dset[[1]]$N # true simulated numbers at age
 
 ### Acknowledgements
 
-This work was funded by a US National Oceanic and Atmospheric Adiministration grant.
+The EGB Assessment is a product of the Haddock working group and has benefited from the input of Brian Linton (chair), Liz Brooks, Charles Perretti, Jamie Cournane, Kevin Friedland, Scott Large, Steve Cadrin, Michele Traver, Tara Trinko and Larry Alade. 
+
+Special thanks goes to the Canadian DFO team that have worked in close coordination in the production of the EGB TORs: Monica Finley, Yanjun Wang, Tara McIntyre, Tim Barrett, Kathryn Cooper-MacDonald and Michelle Greenlaw. 
+
+Special thanks also to Tim Miller and Brian Stock for their help getting to grips with their excellent WHAM package
 
 
 &nbsp;
