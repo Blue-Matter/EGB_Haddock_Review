@@ -129,7 +129,7 @@ A full set of detailed diagnostics and model estimates are available in the form
 
 ***
 
-### Background information
+### Previous Assessments 
 
 The 2019 VPA assessment [document](Reports/EGB Haddock 2019_WP.docx)
 
@@ -142,6 +142,17 @@ Proceedings of the 2019 Transboundary Resources Assessment Committee for Eastern
 
 ***
 
+### Management Context and TRAC
+
+A [Brief description](Reports/Tab 2 - Background of Management Structure.docx) of EGB Management Structure
+
+The [TRAC homepage](https://www.bio.gc.ca/info/intercol/trac-cert/index-en.php)
+
+
+&nbsp;
+&nbsp;
+
+***
 
 ### Tables and Figures presented in TORs 4, 6, 8 and 11
 
