@@ -131,6 +131,8 @@ A full set of detailed diagnostics and model estimates are available in the form
 
 ### Background information
 
+The 2019 VPA assessment [document](Reports/EGB Haddock 2019_WP.docx)
+
 A summary of the [rejected 2019 VPA asssessment](Reports/TSR_2019_EGBHAD_FINAL_CDN Approved.pdf)
 
 Proceedings of the 2019 Transboundary Resources Assessment Committee for Eastern Georges Bank Cod and Haddock, and Georges Bank Yellowtail Flounder [NOAA status report](Reports/2019_Proceedings_noaa_24762_DS1.pdf)
