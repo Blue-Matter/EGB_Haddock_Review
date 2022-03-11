@@ -113,7 +113,7 @@ The correct order to run through the scripts from scratch is:
 * TOR 4 i-vi (assessment) 
 * TOR 11 i & ii (reference points), 
 * TOR 6 (projections - uses operating model and reference points from TOR 11)
-* TOR 8 (plan B - uses operating model and reference points from TOR 8)
+* TOR 8 (plan B - uses operating model and reference points from TOR 11)
 
 &nbsp;
 &nbsp;
